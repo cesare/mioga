@@ -11,6 +11,7 @@
   , "coffee-script":    ">= 1.1.1"
   , "mime":             ">= 1.2.2"
   , "qs":               ">= 0.1.0"
+  , "everyauth":        ">= 0.2.28"
   }
 , "scripts":
   { "test": "nodeunit test/*/*"
