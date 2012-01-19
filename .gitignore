@@ -1,0 +1,8 @@
+*~
+*.swp
+*.bak
+*.orig
+*.old
+
+log
+node_modules
