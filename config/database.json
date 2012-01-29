@@ -1,5 +1,6 @@
 { "development":
-  { "driver":   "memory"
+  { "driver":   "mongoose"
+  , "url": "mongodb://localhost/mioga_development"
   }
 , "test":
   { "driver":   "memory"
