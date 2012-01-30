@@ -4,7 +4,6 @@ var connect = require('connect');
 var RedisStore = require('connect-redis')(connect);
 
 var mioga = require('./mioga')[app.settings.env];
-var util = require("util");
 
 everyauth.everymodule.findUserById(function (userId, callback) {
   User.find(userId, callback);
@@ -14,10 +13,8 @@ everyauth.twitter
   .consumerKey(mioga.twitter.consumerKey)
   .consumerSecret(mioga.twitter.consumerSecret)
   .findOrCreateUser( function (session, accessToken, accessTokenSecret, twitterUserMetadata) {
-    console.log(twitterUserMetadata);
     var promise = new everyauth.Promise();
     promise.callback(function(user) {
-      console.log("returning user: " + util.inspect(user));
       return user;
     });
     User.all({ where: {provider: "twitter", providerUid: twitterUserMetadata.id_str}}, function(err, data) {
